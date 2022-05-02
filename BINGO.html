@@ -1,0 +1,140 @@
+<html>
+<head>
+	<title>Sunday Map Bingo</title>
+	<style>
+		body {
+			background-color: white;
+			color: black;
+			font-size: 20px;
+			font-family: "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+		}
+		h1, p {
+			text-align: center;
+		}
+		
+		h1, th {
+			font-family: Georgia, "Times New Roman", Times, serif;
+		}
+
+		h1 {
+			font-size: 28px;
+		}
+
+		table {
+			border-collapse: collapse;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		th, td {
+			padding: 10px;
+			border: 2px #666 solid;
+			text-align: center;
+			font-size: 24px;
+		}
+		
+		.objective {
+			position: relative;
+		}
+		.marker {
+			display: none;
+			position: absolute;
+			bottom:0;
+			right:0;
+		}
+	</style>
+	<script type="text/javascript">
+		var winners = [
+        ['a1','b1','c1','d1','e1'],
+        ['a2','b2','c2','d2','e2'],
+        ['a3','b3','c3','d3','e3'],
+        ['a4','b4','c4','d4','e4'],
+        ['a5','b5','c5','d5','e5'],
+		['a1','a2','a3','a4','a5'],
+        ['b1','b2','b3','b4','b5'],
+        ['c1','c2','c3','c4','c5'],
+        ['d1','d2','d3','d4','d5'],
+        ['e1','e2','e3','e4','e5'],
+        ['a1','b2','c3','d4','e5'],
+        ['a5','b4','c3','d2','e1']
+		];
+		var selected = [];
+		function toggle(id) {
+			var marker = document.getElementById(id);
+			if(marker.style.display === '')
+			{
+				marker.style.display = 'block';
+				selected.push(id);
+			}else{
+				marker.style.display = '';
+				var index = selected.findIndex(v => v === id);
+				selected.splice(index,1);
+			}
+			bingoCount()
+		}
+		function bingoCount() {
+			var bingos = 0;
+			for(let i = 0; i < winners.length; i++)
+			{
+				var contains = winners[i].every(element => {
+					return selected.indexOf(element) !== -1;
+				});
+				if(contains){
+					bingos=bingos+1;
+				}
+			}
+			var bingoTotal = document.getElementById("bingos");
+			bingoTotal.innerHTML = bingos;
+		}
+		
+	</script>
+</head>
+<body>
+	<table>
+		<tr>
+			<th width="20%">B</th>
+			<th width="20%">I</th>
+			<th width="20%">N</th>
+			<th width="20%">G</th>
+			<th width="20%">O</th>
+		</tr>
+		<tr>
+			<td><button onclick=toggle("a1")><div class="objective"><img src="assets/1.png"><img id="a1" class="marker" src="assets/marked.png"></div></button></td>
+			<td><button onclick=toggle("b1")><div class="objective"><img src="assets/2.png"><img id="b1" class="marker" src="assets/marked.png"></div></button></td>
+			<td><button onclick=toggle("c1")><div class="objective"><img src="assets/3.png"><img id="c1" class="marker" src="assets/marked.png"></div></button></td>
+			<td><button onclick=toggle("d1")><div class="objective"><img src="assets/4.png"><img id="d1" class="marker" src="assets/marked.png"></div></button></td>
+			<td><button onclick=toggle("e1")><div class="objective"><img src="assets/5.png"><img id="e1" class="marker" src="assets/marked.png"></div></button></td>
+		</tr>
+		<tr>
+			<td><button onclick=toggle("a2")><div class="objective"><img src="assets/6.png"><img id="a2" class="marker" src="assets/marked.png"></div></button></td>
+			<td><button onclick=toggle("b2")><div class="objective"><img src="assets/7.png"><img id="b2" class="marker" src="assets/marked.png"></div></button></td>
+			<td><button onclick=toggle("c2")><div class="objective"><img src="assets/8.png"><img id="c2" class="marker" src="assets/marked.png"></div></button></td>
+			<td><button onclick=toggle("d2")><div class="objective"><img src="assets/9.png"><img id="d2" class="marker" src="assets/marked.png"></div></button></td>
+			<td><button onclick=toggle("e2")><div class="objective"><img src="assets/10.png"><img id="e2" class="marker" src="assets/marked.png"></div></button></td>
+		</tr>
+		<tr>
+			<td><button onclick=toggle("a3")><div class="objective"><img src="assets/11.png"><img id="a3" class="marker" src="assets/marked.png"></div></button></td>
+			<td><button onclick=toggle("b3")><div class="objective"><img src="assets/12.png"><img id="b3" class="marker" src="assets/marked.png"></div></button></td>
+			<td><button onclick=toggle("c3")><div class="objective"><img src="assets/13.png"><img id="c3" class="marker" src="assets/marked.png"></div></button></td>
+			<td><button onclick=toggle("d3")><div class="objective"><img src="assets/14.png"><img id="d3" class="marker" src="assets/marked.png"></div></button></td>
+			<td><button onclick=toggle("e3")><div class="objective"><img src="assets/15.png"><img id="e3" class="marker" src="assets/marked.png"></div></button></td>
+		</tr>
+		<tr>
+			<td><button onclick=toggle("a4")><div class="objective"><img src="assets/16.png"><img id="a4" class="marker" src="assets/marked.png"></div></button></td>
+			<td><button onclick=toggle("b4")><div class="objective"><img src="assets/17.png"><img id="b4" class="marker" src="assets/marked.png"></div></button></td>
+			<td><button onclick=toggle("c4")><div class="objective"><img src="assets/18.png"><img id="c4" class="marker" src="assets/marked.png"></div></button></td>
+			<td><button onclick=toggle("d4")><div class="objective"><img src="assets/19.png"><img id="d4" class="marker" src="assets/marked.png"></div></button></td>
+			<td><button onclick=toggle("e4")><div class="objective"><img src="assets/20.png"><img id="e4" class="marker" src="assets/marked.png"></div></button></td>
+		</tr>
+		<tr>
+			<td><button onclick=toggle("a5")><div class="objective"><img src="assets/21.png"><img id="a5" class="marker" src="assets/marked.png"></div></button></td>
+			<td><button onclick=toggle("b5")><div class="objective"><img src="assets/22.png"><img id="b5" class="marker" src="assets/marked.png"></div></button></td>
+			<td><button onclick=toggle("c5")><div class="objective"><img src="assets/23.png"><img id="c5" class="marker" src="assets/marked.png"></div></button></td>
+			<td><button onclick=toggle("d5")><div class="objective"><img src="assets/24.png"><img id="d5" class="marker" src="assets/marked.png"></div></button></td>
+			<td><button onclick=toggle("e5")><div class="objective"><img src="assets/25.png"><img id="e5" class="marker" src="assets/marked.png"></div></button></td>
+		</tr>
+	</table>
+	<h1>BINGOS</h1>
+	<p id="bingos">0</p>
+</body>
+</html>
