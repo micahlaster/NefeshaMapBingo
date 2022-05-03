@@ -23,7 +23,12 @@ th, td {
 	border: 2px #666 solid;
 	text-align: center;
 	font-size: 24px;
-}		
+}
+button {
+	border: none;
+	padding: 0;
+	background: none;
+}
 .objective {
 	position: relative;
 }
