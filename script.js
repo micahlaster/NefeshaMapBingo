@@ -58,3 +58,26 @@ function bingoCount() {
 	var bingoTotal = document.getElementById("bingos");
 	bingoTotal.innerHTML = bingos;
 }
+
+window.onload = function load() {
+	var goals = document.getElementsByClassName("goal");
+	for(goal in goals){
+		goals[goal].src ="assets/"+goal+".png"
+	}
+	var markers = document.getElementsByClassName("marker");
+	for(marker in markers){
+		markers[marker].src = "assets/marked.png";
+	}
+	var columns = document.getElementsByClassName("column");
+	for(column in columns){
+		columns[column].src = "assets/column.png";
+	}
+	var rows = document.getElementsByClassName("row");
+	for(row in rows){
+		rows[row].src = "assets/row.png";
+	}
+	var topLeftBottomRight = document.getElementById("topLeftBottomRight");
+	topLeftBottomRight.src ="assets/topLeftBottomRight.png";
+	var topRightBottomLeft = document.getElementById("topRightBottomLeft");
+	topRightBottomLeft.src ="assets/topRightBottomLeft.png";
+}
