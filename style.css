@@ -4,10 +4,21 @@ body {
 	font-size: 20px;
 	font-family: "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
 }
-h1, p {
+footer {
+	background-color: A0A0A0;
+	color: black;
+	font-size: 20px;
+	font-family: "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	left: 0;
 	text-align: center;
 }
-h1, th {
+h1, p {
+	display: inline-block;
+}
+h1, th, p {
 	font-family: Georgia, "Times New Roman", Times, serif;
 }
 h1 {
@@ -28,6 +39,9 @@ button {/*hide the button display so the image doesnt have a grayish thing aroun
 	border: none;
 	padding: 0;
 	background: none;
+}
+.center {
+	text-align: center;
 }
 .objective {/*nessesary so objects display relative to these objects*/
 	position: relative;
